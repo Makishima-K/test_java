@@ -3,8 +3,10 @@ package sef.module2.activity;
 public class NumToWordsUsingMethod {
 
     public static void main(String[] args) {
-        // Print text value of number 5 using the printWord() method
-        printWord(5);
+        // Call printWord() to print text values of 8, 9 and 10
+        printWord(8);
+        printWord(9);
+        printWord(10);
     }
 
     // Prints the text value of a number from 1 to 10
