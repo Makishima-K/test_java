@@ -1,5 +1,7 @@
 package module10;
 
+import java.util.List;
+
 /**
  * Represents an employee: a {@link Person} who works at a company.
  * Adds the job title, company name and salary to the attributes of a person.
@@ -116,6 +118,27 @@ public class Employee extends Person {
      */
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    /**
+     * Finds the employee with the highest salary in the given list and returns his or her name.
+     * If several employees share the highest salary, the first one in the list is chosen.
+     *
+     * @param empList the list of employees to search
+     * @return the name of the highest paid employee, or {@code null} if the list is {@code null} or empty
+     */
+    public static String getHighestPaidEmp(List<Employee> empList) {
+        if (empList == null || empList.isEmpty()) {
+            return null;
+        }
+
+        Employee highestPaid = empList.get(0);
+        for (Employee employee : empList) {
+            if (employee.getSalary() > highestPaid.getSalary()) {
+                highestPaid = employee;
+            }
+        }
+        return highestPaid.getName();
     }
 
     /**
